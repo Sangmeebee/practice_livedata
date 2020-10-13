@@ -4,5 +4,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
-    val currentName : MutableLiveData<String> = MutableLiveData<String>()
+    val count = MutableLiveData<Int>()
+
+    fun increase() {
+        count.value = count.value?.plus(1)
+    }
+
+    fun decrease() {
+        count.value = count.value?.minus(1)
+    }
+
+    init {
+        count.value = 0
+    }
 }
